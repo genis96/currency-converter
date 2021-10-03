@@ -1,12 +1,17 @@
 import React from 'react';
 
 
-function Currency() {
+function Currency(props) {
+    const {
+        options
+    } = props 
     return (
         <div>
             <input type='number' className='input'/>
             <select>
-                <option value='Hi'>xx</option>
+                {options.map(option => (
+                    <option key={option} value={option}>{option}</option>
+                ))}
             </select>
         </div>
     )
